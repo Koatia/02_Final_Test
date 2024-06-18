@@ -1,0 +1,71 @@
+ki@ki:~$ wget -c http://ftp.ru.debian.org/debian/pool/main/n/nginx/nginx_1.22.1-9_amd64.deb
+--2024-06-17 20:06:58--  http://ftp.ru.debian.org/debian/pool/main/n/nginx/nginx_1.22.1-9_amd64.deb
+Resolving ftp.ru.debian.org (ftp.ru.debian.org)... 85.143.112.112
+Connecting to ftp.ru.debian.org (ftp.ru.debian.org)|85.143.112.112|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 527396 (515K) [application/octet-stream]
+Saving to: ‘nginx_1.22.1-9_amd64.deb’
+
+nginx_1.22.1-9_amd64.deb 100%[==================================>] 515,04K   979KB/s    in 0,5s
+
+2024-06-17 20:06:59 (979 KB/s) - ‘nginx_1.22.1-9_amd64.deb’ saved [527396/527396]
+
+ki@ki:~$ sudo dpkg -i nginx_1.22.1-9_amd64.deb
+[sudo] password for ki:
+Выбор ранее не выбранного пакета nginx.
+(Чтение базы данных … на данный момент установлен 83381 файл и каталог.)
+Подготовка к распаковке nginx_1.22.1-9_amd64.deb …
+Распаковывается nginx (1.22.1-9) …
+dpkg: зависимости пакетов не позволяют настроить пакет nginx:
+ nginx зависит от nginx-common (<< 1.22.1-9.1~), однако:
+  Пакет nginx-common не установлен.
+ nginx зависит от nginx-common (>= 1.22.1-9), однако:
+  Пакет nginx-common не установлен.
+
+dpkg: ошибка при обработке пакета nginx (--install):
+ проблемы зависимостей — оставляем не настроенным
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+При обработке следующих пакетов произошли ошибки:
+ nginx
+
+
+ki@ki:~$ sudo apt-get install -f
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Исправление зависимостей… Готово
+Будут установлены следующие дополнительные пакеты:
+  nginx nginx-common
+Предлагаемые пакеты:
+  fcgiwrap nginx-doc ssl-cert
+Следующие НОВЫЕ пакеты будут установлены:
+  nginx-common
+Следующие пакеты будут обновлены:
+  nginx
+Обновлено 1 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Установлено или удалено не до конца 1 пакетов.
+Необходимо скачать 552 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 234 kB.
+Хотите продолжить? [Д/н]
+Пол:1 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 nginx amd64 1.24.0-2ubuntu7 [521 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 nginx-common all 1.24.0-2ubuntu7 [31,2 kB]
+Получено 552 kB за 1с (775 kB/s)
+Предварительная настройка пакетов …
+(Чтение базы данных … на данный момент установлено 83387 файлов и каталогов.)
+Подготовка к распаковке …/nginx_1.24.0-2ubuntu7_amd64.deb …
+Распаковывается nginx (1.24.0-2ubuntu7) на замену (1.22.1-9) …
+Выбор ранее не выбранного пакета nginx-common.
+Подготовка к распаковке …/nginx-common_1.24.0-2ubuntu7_all.deb …
+Распаковывается nginx-common (1.24.0-2ubuntu7) …
+Настраивается пакет nginx (1.24.0-2ubuntu7) …
+Настраивается пакет nginx-common (1.24.0-2ubuntu7) …
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /usr/lib/systemd/system/nginx.service.
+Обрабатываются триггеры для ufw (0.36.2-6) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+needrestart is being skipped since dpkg has failed
+
+ki@ki:~$ sudo dpkg -r nginx nginx-common
+(Чтение базы данных … на данный момент установлено 83429 файлов и каталогов.)
+Удаляется nginx-common (1.24.0-2ubuntu7) …
+Удаляется nginx (1.24.0-2ubuntu7) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
