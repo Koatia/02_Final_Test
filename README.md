@@ -146,7 +146,7 @@ sudo dpkg -r nginx nginx-common
 history 40  
 ```
 
-[История терминальных команд](1_OS_and_Virtualization/Снимок_экрана.png)
+[История терминальных команд](1_OS_and_Virtualization/Screen.png)
 
 
 
