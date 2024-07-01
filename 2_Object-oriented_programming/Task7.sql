@@ -1,7 +1,7 @@
--- - В ранее подключенном MySQL создать базу данных с названием "Human Friends"
-DROP database IF EXISTS HumanFriends;
-CREATE database HumanFriends;
-USE HumanFriends;
+-- В ранее подключенном MySQL создать базу данных с названием "Human Friends"
+DROP database IF EXISTS human_friends;
+CREATE database human_friends;
+USE human_friends;
 
 -- Создать таблицы, соответствующие иерархии из вашей диаграммы классов
 DROP TABLE IF EXISTS Pets;

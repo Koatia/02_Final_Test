@@ -152,12 +152,31 @@ history 40
 
 > `Задание 6.` Нарисовать диаграмму, в которой есть класс родительский класс, домашние животные и вьючные животные, в составы которых в случае домашних животных войдут классы: собаки, кошки, хомяки, а в класс вьючные животные войдут: Лошади, верблюды и ослы.
 
-![scheme](scheme.png) 
+![scheme](2_Object-oriented_programming/Диаграмма_классов.drawio.png)
+
 
 > `Задание 7.` В подключенном MySQL репозитории создать базу данных “Друзья человека”
+```bash
+mysql -u root -p
+```
 ```sql
-create database human_friends;
-use human_friends;
+DROP database IF EXISTS human_friends;
+CREATE database human_friends;
+USE human_friends;
+
+SHOW DATABASES;
+# Вывод:
++--------------------+
+| Database           |
++--------------------+
+| human_friends      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0,00 sec)
+
 ```
 
 > `Задание 8.` Создать таблицы с иерархией из диаграммы в БД
