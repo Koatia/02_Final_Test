@@ -1,16 +1,16 @@
-## Ярохно Константин, группа 6024
+### [Итоговая контрольная работа по блоку специализация](https://gb.ru/lessons/440557/homework)
 
-### Урок 2. Итоговая контрольная работа по блоку специализация  
+#### Ярохно Константин, группа 6024
 
 #### Информация о проекте
-Необходимо организовать систему учета для питомника в котором живут домашние и Pack animals. 
 
+Необходимо организовать систему учета для питомника в котором живут домашние и Pack animals.
 
-> `Задание 1. Использование команды cat в Linux`
+##### Задание 1. Использование команды cat в Linux
 
-   - Создать два текстовых файла: `pets.txt` (Домашние животные) и `pack_animals`(вьючные животные), используя команду `cat` в терминале Linux. В первом файле перечислить собак, кошек и хомяков. Во втором — лошадей, верблюдов и ослов.
-   - Объединить содержимое этих двух файлов в один и просмотреть его содержимое.
-   - Переименовать получившийся файл в `human_friends.txt`.
+- Создать два текстовых файла: `pets.txt` (Домашние животные) и `pack_animals`(вьючные животные), используя команду `cat` в терминале Linux. В первом файле перечислить собак, кошек и хомяков. Во втором — лошадей, верблюдов и ослов.
+- Объединить содержимое этих двух файлов в один и просмотреть его содержимое.
+- Переименовать получившийся файл в `human_friends.txt`.
 
 ```bash
 mkdir test
@@ -66,9 +66,9 @@ human_friends.txt  pack_animals.txt  pets.txt
 
 [История терминальных команд](1_OS_and_Virtualization/task_1.txt)
 
-> `Задание 2. Работа с директориями в Linux`
+##### Задание 2. Работа с директориями в Linux
 
-- Создать директорию, переместить файл туда. 
+- Создать директорию, переместить файл туда.
 
 ```bash
 mkdir newdir
@@ -86,9 +86,9 @@ human_friends.txt
 
 [История терминальных команд](1_OS_and_Virtualization/task_2.txt)
 
-> `Задание 3. Работа с MySQL в Linux. “Установить MySQL на вашу вычислительную машину”`
+##### Задание 3. Работа с MySQL в Linux. “Установить MySQL на вашу вычислительную машину”
 
-- Подключить дополнительный репозиторий MySQL. 
+- Подключить дополнительный репозиторий MySQL.
 - Установить один из пакетов из этого репозитория.
 
 ```bash
@@ -120,8 +120,8 @@ systemctl status mysql
 
 [История терминальных команд](1_OS_and_Virtualization/task_3.txt)
 
+##### Задание 4. Управление deb-пакетами
 
-> `Задание 4. Управление deb-пакетами`
 - Установить и удалить deb-пакет с помощью dpkg.
 
 ```bash
@@ -138,360 +138,455 @@ sudo dpkg -r nginx nginx-common
 
 [История терминальных команд](1_OS_and_Virtualization/task_4.txt)
 
+##### Задание 5. Выложить историю команд в терминале ubuntu
 
-> `Задание 5. Выложить историю команд в терминале ubuntu.`
+Вывожу крайние 40 команд:
 
-**Вывожу крайние 40 команд:**
 ```bash
 history 40  
 ```
 
 [История терминальных команд](1_OS_and_Virtualization/Screen.png)
 
+##### Задание 6. Диаграмма классов
 
+Создать диаграмму классов с родительским классом "Животные", и двумя подклассами: "Pets" и "Pack animals".
 
-> `Задание 6.` Нарисовать диаграмму, в которой есть класс родительский класс, домашние животные и вьючные животные, в составы которых в случае домашних животных войдут классы: собаки, кошки, хомяки, а в класс вьючные животные войдут: Лошади, верблюды и ослы.
+В составы классов которых в случае Pets войдут классы: собаки, кошки, хомяки, а в класс Pack animals войдут: Лошади, верблюды и ослы.
+
+Каждый тип животных будет характеризоваться (например, имена, даты рождения, выполняемые команды и т.д)
+
+Диаграмму можно нарисовать в любом редакторе, такими как Lucidchart, Draw.io, Microsoft Visio и других.
 
 ![scheme](2_Object-oriented_programming/Диаграмма_классов.drawio.png)
 
+```
+HumanFriends
+  - id_human_friend
+  - type_human_friend
 
-> `Задание 7.` В подключенном MySQL репозитории создать базу данных “Друзья человека”
+Pets (наследует от HumanFriends)
+  - id_pet
+  - type_pet
+
+  Dogs (наследует от Pets)
+    - id_dog
+    - name
+    - birth_day
+    - commands
+
+  Cats (наследует от Pets)
+    - id_cat
+    - name
+    - birth_day
+    - commands
+
+  Hamsters (наследует от Pets)
+    - id_hamster
+    - name
+    - birth_day
+    - commands
+
+PackAnimals (наследует от HumanFriends)
+  - id_pack_animal
+  - type_pack_animal
+
+  Horses (наследует от PackAnimals)
+    - id_horse
+    - name
+    - birth_day
+    - commands
+
+  Camels (наследует от PackAnimals)
+    - id_camel
+    - name
+    - birth_day
+    - commands
+
+  Donkeys (наследует от PackAnimals)
+    - id_donkey
+    - name
+    - birth_day
+    - commands
+```
+
+##### Задание 7. Работа с MySQL (Задача выполняется в случае успешного выполнения задачи “Работа с MySQL в Linux. “Установить MySQL на вашу машину”)
+
+После создания диаграммы классов в 6 пункте, в 7 пункте база данных "Human_Friends" должна быть структурирована в соответствии с этой диаграммой. Например, можно создать таблицы, которые будут соответствовать классам "Pets" и "Pack_animals", и в этих таблицах будут поля, которые характеризуют каждый тип животных (например, имена, даты рождения, выполняемые команды и т.д.).
+
+В ранее подключенном MySQL создать базу данных с названием "HumanFriends".
+
+- Создать таблицы, соответствующие иерархии из вашей диаграммы классов.
+- Заполнить таблицы данными о животных, их командах и датами рождения.
+- Удалить записи о верблюдах и объединить таблицы лошадей и ослов.
+- Создать новую таблицу для животных в возрасте от 1 до 3 лет и вычислить их возраст с точностью до месяца.
+- Объединить все созданные таблицы в одну, сохраняя информацию о принадлежности к исходным таблицам.
+
+> Создать базу данных с названием "HumanFriends"
+
 ```bash
 mysql -u root -p
 ```
+
 ```sql
-DROP database IF EXISTS human_friends;
-CREATE database human_friends;
-USE human_friends;
+DROP database IF EXISTS HumanFriends;
+CREATE database HumanFriends;
+USE HumanFriends;
 
 SHOW DATABASES;
 # Вывод:
 +--------------------+
 | Database           |
 +--------------------+
-| human_friends      |
+| HumanFriends       |
 | information_schema |
 | mysql              |
 | performance_schema |
 | sys                |
 +--------------------+
 5 rows in set (0,00 sec)
+```
+
+> Создать таблицы с иерархией из диаграммы в БД
+
+```sql
+DROP TABLE IF EXISTS HumanFriends;
+CREATE TABLE HumanFriends (
+    id_human_friend INT AUTO_INCREMENT PRIMARY KEY,
+    type_human_friend VARCHAR(255)
+);
+
+DROP TABLE IF EXISTS Pets;
+CREATE TABLE Pets (
+    id_pet INT AUTO_INCREMENT PRIMARY KEY,
+    type_pet VARCHAR(255),
+    id_human_friend INT,
+    FOREIGN KEY (id_human_friend) REFERENCES HumanFriends(id_human_friend)
+);
+
+DROP TABLE IF EXISTS PackAnimals;
+CREATE TABLE PackAnimals (
+    id_pack_animal INT AUTO_INCREMENT PRIMARY KEY,
+    type_pack_animal VARCHAR(255),
+    id_human_friend INT,
+    FOREIGN KEY (id_human_friend) REFERENCES HumanFriends(id_human_friend)
+);
+
+DROP TABLE IF EXISTS Cats;
+CREATE TABLE Cats (
+    id_cat INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    birth_day DATE,
+    commands TEXT,
+    id_pet INT,
+    FOREIGN KEY (id_pet) REFERENCES Pets(id_pet)
+);
+
+DROP TABLE IF EXISTS Dogs;
+CREATE TABLE Dogs (
+    id_dog INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    birth_day DATE,
+    commands TEXT,
+    id_pet INT,
+    FOREIGN KEY (id_pet) REFERENCES Pets(id_pet)
+);
+
+DROP TABLE IF EXISTS Hamsters;
+CREATE TABLE Hamsters (
+    id_hamster INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    birth_day DATE,
+    commands TEXT,
+    id_pet INT,
+    FOREIGN KEY (id_pet) REFERENCES Pets(id_pet)
+);
+
+DROP TABLE IF EXISTS Horses;
+CREATE TABLE Horses (
+    id_horse INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    birth_day DATE,
+    commands TEXT,
+    id_pack_animal INT,
+    FOREIGN KEY (id_pack_animal) REFERENCES PackAnimals(id_pack_animal)
+);
+
+DROP TABLE IF EXISTS Camels;
+CREATE TABLE Camels (
+    id_camel INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    birth_day DATE,
+    commands TEXT,
+    id_pack_animal INT,
+    FOREIGN KEY (id_pack_animal) REFERENCES PackAnimals(id_pack_animal)
+);
+
+DROP TABLE IF EXISTS Donkeys;
+CREATE TABLE Donkeys (
+    id_donkey INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    birth_day DATE,
+    commands TEXT,
+    id_pack_animal INT,
+    FOREIGN KEY (id_pack_animal) REFERENCES PackAnimals(id_pack_animal)
+);
+
+SHOW TABLES;
+# Вывод:
++------------------------+
+| Tables_in_HumanFriends |
++------------------------+
+| Camels                 |
+| Cats                   |
+| Dogs                   |
+| Donkeys                |
+| Hamsters               |
+| Horses                 |
+| HumanFriends           |
+| PackAnimals            |
+| Pets                   |
++------------------------+
+9 rows in set (0,00 sec)
 
 ```
 
-> `Задание 8.` Создать таблицы с иерархией из диаграммы в БД
+> Заполнение таблиц данными
 
 ```sql
+INSERT INTO HumanFriends (type_human_friend) VALUES ('Pet'), ('PackAnimal');
+INSERT INTO Pets (type_pet, id_human_friend) VALUES ('Cat', 1), ('Dog', 1), ('Hamster', 1);
+INSERT INTO PackAnimals (type_pack_animal, id_human_friend) VALUES ('Horse', 2), ('Camel', 2), ('Donkey', 2);
+INSERT INTO Cats (name, birth_day, commands, id_pet) VALUES ('Whiskers', '2022-01-01', 'sit, jump', 1);
+INSERT INTO Dogs (name, birth_day, commands, id_pet) VALUES ('Rex', '2021-05-10', 'fetch, sit', 2);
+INSERT INTO Hamsters (name, birth_day, commands, id_pet) VALUES ('Nibbles', '2023-03-20', 'run', 3);
+INSERT INTO Horses (name, birth_day, commands, id_pack_animal) VALUES ('Thunder', '2019-07-15', 'run', 1);
+INSERT INTO Camels (name, birth_day, commands, id_pack_animal) VALUES ('Sandy', '2020-10-30', 'carry', 2);
+INSERT INTO Donkeys (name, birth_day, commands, id_pack_animal) VALUES ('Eeyore', '2022-02-14', 'carry', 3);
 
-create database human_friends;
-use human_friends;
+SELECT * FROM HumanFriends;
+SELECT * FROM Pets;
+SELECT * FROM PackAnimals;
+SELECT * FROM Cats;
+SELECT * FROM Dogs;
+SELECT * FROM Hamsters;
+SELECT * FROM Horses;
+SELECT * FROM Camels;
+SELECT * FROM Donkeys;
+```
 
-CREATE TABLE human_friends
-(
-  id_human_friend INT PRIMARY KEY AUTO_INCREMENT,
-  kind VARCHAR (40)
-);
+> Проверяю:
 
-CREATE TABLE commands
-(
-  id_command INT PRIMARY KEY auto_increment,
-  command VARCHAR (40) unique
-);
+```sql
+mysql> SELECT * FROM HumanFriends;
++-----------------+-------------------+
+| id_human_friend | type_human_friend |
++-----------------+-------------------+
+|               1 | Pet               |
+|               2 | PackAnimal        |
++-----------------+-------------------+
+2 rows in set (0,00 sec)
 
-CREATE TABLE pets
-(
-  id_pet INT PRIMARY KEY AUTO_INCREMENT,
-  id_human_friend INT,
-  kind VARCHAR (40) unique,
-  FOREIGN KEY (id_human_friend) REFERENCES human_friends (id_human_friend) ON DELETE SET NULL
-);
+mysql> SELECT * FROM Pets;
++--------+----------+-----------------+
+| id_pet | type_pet | id_human_friend |
++--------+----------+-----------------+
+|      1 | Cat      |               1 |
+|      2 | Dog      |               1 |
+|      3 | Hamster  |               1 |
++--------+----------+-----------------+
+3 rows in set (0,00 sec)
 
-CREATE TABLE pack_animals
-(
-  id_pack_animal INT PRIMARY KEY AUTO_INCREMENT,
-  id_human_friend INT,
-  kind VARCHAR (40) unique,
-  FOREIGN KEY (id_human_friend) REFERENCES human_friends (id_human_friend) ON DELETE SET NULL
-);
+mysql> SELECT * FROM PackAnimals;
++----------------+------------------+-----------------+
+| id_pack_animal | type_pack_animal | id_human_friend |
++----------------+------------------+-----------------+
+|              1 | Horse            |               2 |
+|              2 | Camel            |               2 |
+|              3 | Donkey           |               2 |
++----------------+------------------+-----------------+
+3 rows in set (0,00 sec)
 
-CREATE TABLE pets_kind_commands
-(
-  kind VARCHAR (40),
-  id_command INT,
-  FOREIGN KEY (id_command) REFERENCES commands (id_command) ON DELETE cascade,
-  foreign key (kind) references pets (kind) on delete cascade
-);
+mysql> SELECT * FROM Cats;
++--------+----------+------------+-----------+--------+
+| id_cat | name     | birth_day  | commands  | id_pet |
++--------+----------+------------+-----------+--------+
+|      1 | Whiskers | 2022-01-01 | sit, jump |      1 |
++--------+----------+------------+-----------+--------+
+1 row in set (0,00 sec)
 
-CREATE TABLE pack_animals_kind_commands
-(
-  kind VARCHAR (40),
-  id_command INT,
-  FOREIGN KEY (id_command) REFERENCES commands (id_command) ON DELETE cascade,
-  foreign key (kind) references pack_animals (kind) on delete cascade
-);
+mysql> SELECT * FROM Dogs;
++--------+------+------------+------------+--------+
+| id_dog | name | birth_day  | commands   | id_pet |
++--------+------+------------+------------+--------+
+|      1 | Rex  | 2021-05-10 | fetch, sit |      2 |
++--------+------+------------+------------+--------+
+1 row in set (0,00 sec)
 
-CREATE TABLE cats
-(
-  id_cat INT PRIMARY KEY AUTO_INCREMENT,
-  id_pet INT,
-  name VARCHAR (40),
-  birth_day DATE,
-  FOREIGN KEY (id_pet) REFERENCES pets (id_pet) ON DELETE SET NULL
-);
+mysql> SELECT * FROM Hamsters;
++------------+---------+------------+----------+--------+
+| id_hamster | name    | birth_day  | commands | id_pet |
++------------+---------+------------+----------+--------+
+|          1 | Nibbles | 2023-03-20 | run      |      3 |
++------------+---------+------------+----------+--------+
+1 row in set (0,00 sec)
 
-CREATE TABLE dogs
-(
-  id_dog INT PRIMARY KEY AUTO_INCREMENT,
-  id_pet INT,
-  name VARCHAR (40),
-  birth_day DATE,
-  FOREIGN KEY (id_pet) REFERENCES pets (id_pet) ON DELETE SET NULL
-);
+mysql> SELECT * FROM Horses;
++----------+---------+------------+----------+----------------+
+| id_horse | name    | birth_day  | commands | id_pack_animal |
++----------+---------+------------+----------+----------------+
+|        1 | Thunder | 2019-07-15 | run      |              1 |
++----------+---------+------------+----------+----------------+
+1 row in set (0,00 sec)
 
-CREATE TABLE hamsters
-(
-  id_hamster INT PRIMARY KEY AUTO_INCREMENT,
-  id_pet INT,
-  name VARCHAR (40),
-  birth_day DATE,
-  FOREIGN KEY (id_pet) REFERENCES pets (id_pet) ON DELETE SET NULL
-);
+mysql> SELECT * FROM Camels;
++----------+-------+------------+----------+----------------+
+| id_camel | name  | birth_day  | commands | id_pack_animal |
++----------+-------+------------+----------+----------------+
+|        1 | Sandy | 2020-10-30 | carry    |              2 |
++----------+-------+------------+----------+----------------+
+1 row in set (0,00 sec)
 
-CREATE TABLE horses
-(
-  id_horse INT PRIMARY KEY AUTO_INCREMENT,
-  id_pack_animal INT,
-  name VARCHAR (40),
-  birth_day DATE,
-  FOREIGN KEY (id_pack_animal) REFERENCES pack_animals (id_pack_animal) ON DELETE SET NULL
-);
-
-CREATE TABLE camels
-(
-  id_camel INT PRIMARY KEY AUTO_INCREMENT,
-  id_pack_animal INT,
-  name VARCHAR (40),
-  birth_day DATE,
-  FOREIGN KEY (id_pack_animal) REFERENCES pack_animals (id_pack_animal) ON DELETE SET NULL
-);
-
-CREATE TABLE donkeys
-(
-  id_donkey INT PRIMARY KEY AUTO_INCREMENT,
-  id_pack_animal INT,
-  name VARCHAR (40),
-  birth_day DATE,
-  FOREIGN KEY (id_pack_animal) REFERENCES pack_animals (id_pack_animal) ON DELETE SET NULL
-);
+mysql> SELECT * FROM Donkeys;
++-----------+--------+------------+----------+----------------+
+| id_donkey | name   | birth_day  | commands | id_pack_animal |
++-----------+--------+------------+----------+----------------+
+|         1 | Eeyore | 2022-02-14 | carry    |              3 |
++-----------+--------+------------+----------+----------------+
+1 row in set (0,00 sec)
 
 ```
 
-> `Задание 9.` Заполнить низкоуровневые таблицы именами(животных), командами
-которые они выполняют и датами рождения
-
-Реляционные БД подразумевают связи между таблицами, поэтому чтобы заполнить низкоуровневые таблицы в полном объеме, необходимо заполнить все существующие таблицы.
+> Удаление записей о верблюдах
 
 ```sql
-INSERT INTO commands (command) VALUES ('Sleep'), ('Eat'),('Go'), ('Purr'), ('Bark');
+mysql> DELETE FROM Camels;
+Query OK, 1 row affected (0,00 sec)
 
-insert into human_friends (kind) values ('pets'), ('pack_animals');
+mysql> SELECT * FROM Camels;
+Empty set (0,01 sec)
 
-alter table pets alter column id_human_friend set default 1;
-
-insert into pets (kind) values ('cat'), ('dog'), ('hamster');
-
-# Проверяю pets
-select * from pets;
-
-alter table pack_animals alter column id_human_friend set default 2;
-
-insert into pack_animals (kind) values ('horse'), ('camel'), ('donkey');
-
-# Проверяю pack_animals
-select * from pack_animals;
-
-insert into pets_kind_commands (kind, id_command) values 
-('cat', 1), ('cat', 2), ('cat', 3), ('cat', 4),
-('dog', 1), ('dog', 2), ('dog', 3), ('dog', 5),
-('hamster', 1), ('hamster', 2), ('hamster', 3);
-
-insert into pack_animals_kind_commands (kind, id_command) values 
-('horse', 1), ('horse', 2), ('horse', 3),
-('camel', 1), ('camel', 2), ('camel', 3),
-('donkey', 1), ('donkey', 2), ('donkey', 3);
-
-# Проверяю
-select * from pets_kind_commands;
-
-# Проверяю
-select * from pack_animals_kind_commands;
-
-insert into cats (id_pet, name, birth_day) values 
-(2, 'Пушистик', '2023-02-28'), 
-(2, 'Селин', '2022-01-01');
-
-# Проверяю котов
-select * from cats;
-
-insert into dogs (id_pet, name, birth_day) values 
-(2, 'Люциан', '2021-06-06'), 
-(2, 'Балрог', '2019-07-20');
-
-# Проверяю собак
-select * from dogs;
-
-insert into hamsters (id_pet, name, birth_day) values 
-(3, 'Печенька', '2023-08-02'), 
-(3, 'Булочка', '2023-02-10');
-
-# Проверяю хомечков
-select * from hamsters;
-
-insert into horses (id_pack_animal, name, birth_day) values 
-(1, 'Звездный ветер', '2011-08-11'), 
-(1, 'Лунная грация', '2009-09-03');
-
-# Проверяю лошадей
-select * from horses;
-
-insert into camels (id_pack_animal, name, birth_day) values 
-(2, 'Горбаш', '2001-05-18'), 
-(2, 'Верблюжка', '2005-03-13');
-
-# Проверяю верблюдов
-select * from camels;
-
-insert into donkeys (id_pack_animal, name, birth_day) values 
-(3, 'Миро', '2015-10-03'), 
-(3, 'Гаррет', '2017-12-22');
-
-# Проверяю осликов
-select * from donkeys;
 ```
 
-> `Задание 10.` Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой
-питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.
+> Объединение таблиц лошадей и ослов
 
 ```sql
-truncate table camels;
-
-# Проверяю верблюдов
-select * from camels;
-
-with hd as (select id_pack_animal, name, birth_day from horses UNION ALL select id_pack_animal, name, birth_day from donkeys)
-select ROW_NUMBER() OVER (ORDER BY name) AS seq_numb, hd.name as name, hd.birth_day as birth_day, pa.kind as kind
-from pack_animals as pa
-right join hd
-on hd.id_pack_animal = pa.id_pack_animal
-; 
-```
-
-Результат запроса:
-
-![horses_with_donkeys](horses_with_donkeys.png)
-
-
-> `Задание 11.` Создать новую таблицу “молодые животные” в которую попадут все
-животные старше 1 года, но младше 3 лет и в отдельном столбце с точностью
-до месяца подсчитать возраст животных в новой таблице
-
-```sql
-# Было интересно, получится ли в один запрос :) 
-
-create table youth_animals 
-with t as (with p_a as (with hd as (
-select id_pack_animal, name, birth_day from horses 
-UNION ALL 
-select id_pack_animal, name, birth_day from donkeys)
-select hd.name as name, hd.birth_day as birth_day, pa.kind as kind
-from pack_animals as pa
-right join hd
-on hd.id_pack_animal = pa.id_pack_animal),
-p_s as (with ps as (
-select id_pet, name, birth_day from cats 
-UNION ALL 
-select id_pet, name, birth_day from dogs 
-UNION ALL 
-select id_pet, name, birth_day from hamsters)
-select ps.name as name, ps.birth_day as birth_day, p.kind as kind
-from pets as p
-right join ps
-on ps.id_pet = p.id_pet)
-select * from p_a
-union all
-select * from p_s)
-select ROW_NUMBER() OVER (ORDER BY name) as seq_numb, t.*, 
-concat(FLOOR(datediff(CURDATE(), birth_day) /30/12), ' years, ', 
-FLOOR(datediff(CURDATE(), birth_day) /30) - FLOOR(datediff(CURDATE(), birth_day) /30/12)*12, ' months') 
-as Age from t
-where FLOOR(datediff(CURDATE(), birth_day) /30/12) >= 1 and FLOOR(datediff(CURDATE(), birth_day) /30/12) <=3
-;
-
-# Проверяю вновь созданную таблицу:  
-select * from youth_animals;
-```
-Результат выполнения запроса:
-
-![youth_animals](youth_animals.png)
-
-
-
-> `Задание 12.` Объединить все таблицы в одну, при этом сохраняя поля, указывающие на прошлую принадлежность к старым таблицам.
-
-```sql
-Select id_pet, null as id_pack_animal, name, birth_day from cats
+DROP TABLE IF EXISTS HorsesAndDonkeys;
+CREATE TABLE HorsesAndDonkeys AS
+SELECT id_horse AS id, name, birth_day, commands, 'Horse' AS type FROM Horses
 UNION
-Select id_pet, null as id_pack_animal, name, birth_day from dogs
-UNION
-Select id_pet, null as id_pack_animal, name, birth_day from hamsters
-UNION
-Select null as id_pet, id_pack_animal, name, birth_day from horses
-UNION
-Select null as id_pet, id_pack_animal, name, birth_day from donkeys;
+SELECT id_donkey AS id, name, birth_day, commands, 'Donkey' AS type FROM Donkeys;
 ```
-Результат запроса:
 
-![union_all_remaining](union_all_remaining.png)
+> Проверяю:
 
-> `Задание 13.` Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
+```sql
+mysql> SELECT * FROM HorsesAndDonkeys;
++----+---------+------------+----------+--------+
+| id | name    | birth_day  | commands | type   |
++----+---------+------------+----------+--------+
+|  1 | Thunder | 2019-07-15 | run      | Horse  |
+|  1 | Eeyore  | 2022-02-14 | carry    | Donkey |
++----+---------+------------+----------+--------+
+2 rows in set (0,00 sec)
 
-Задание выполнено в ходе написания кода программы
+```
 
-> `Задание 14.` Написать программу, имитирующую работу реестра домашних животных.
+> Создание новой таблицы для животных в возрасте от 1 до 3 лет (от 12 до 36 месяцев)
+
+```sql
+DROP TABLE IF EXISTS YoungAnimals;
+CREATE TABLE YoungAnimals AS
+SELECT id, name, birth_day, commands, type,
+       TIMESTAMPDIFF(MONTH, birth_day, CURDATE()) AS age_in_months
+FROM (
+    SELECT id_cat AS id, name, birth_day, commands, 'Cat' AS type FROM Cats
+    UNION ALL
+    SELECT id_dog AS id, name, birth_day, commands, 'Dog' AS type FROM Dogs
+    UNION ALL
+    SELECT id_hamster AS id, name, birth_day, commands, 'Hamster' AS type FROM Hamsters
+    UNION ALL
+    SELECT id AS id, name, birth_day, commands, type FROM HorsesAndDonkeys
+) AS AllAnimals
+WHERE TIMESTAMPDIFF(MONTH, birth_day, CURDATE()) BETWEEN 12 AND 36;
+```
+
+> Проверяю:
+
+```sql
+mysql> SELECT * FROM YoungAnimals;
++----+----------+------------+-----------+---------+---------------+
+| id | name     | birth_day  | commands  | type    | age_in_months |
++----+----------+------------+-----------+---------+---------------+
+|  1 | Whiskers | 2022-01-01 | sit, jump | Cat     |            30 |
+|  1 | Nibbles  | 2023-03-20 | run       | Hamster |            15 |
+|  1 | Eeyore   | 2022-02-14 | carry     | Donkey  |            29 |
++----+----------+------------+-----------+---------+---------------+
+3 rows in set (0,00 sec)
+```
+
+> Объединение всех созданных таблиц в одну
+
+```sql
+DROP TABLE IF EXISTS AllAnimals;
+CREATE TABLE AllAnimals AS
+SELECT id_cat AS id, name, birth_day, commands, 'Cat' AS type FROM Cats
+UNION
+SELECT id_dog AS id, name, birth_day, commands, 'Dog' AS type FROM Dogs
+UNION
+SELECT id_hamster AS id, name, birth_day, commands, 'Hamster' AS type FROM Hamsters
+UNION
+SELECT id AS id, name, birth_day, commands, type FROM HorsesAndDonkeys
+UNION
+SELECT id AS id, name, birth_day, commands, type FROM YoungAnimals;
+```
+
+> Проверяю:
+
+```sql
+mysql> SELECT * FROM AllAnimals;
++----+----------+------------+------------+---------+
+| id | name     | birth_day  | commands   | type    |
++----+----------+------------+------------+---------+
+|  1 | Whiskers | 2022-01-01 | sit, jump  | Cat     |
+|  1 | Rex      | 2021-05-10 | fetch, sit | Dog     |
+|  1 | Nibbles  | 2023-03-20 | run        | Hamster |
+|  1 | Thunder  | 2019-07-15 | run        | Horse   |
+|  1 | Eeyore   | 2022-02-14 | carry      | Donkey  |
++----+----------+------------+------------+---------+
+5 rows in set (0,00 sec)
+
+mysql> exit
+Bye
+ki@ki:~$ exit
+logout
+Connection to 192.168.1.139 closed.
+```
+
+Файл с sql-скриптом
+
+##### Задание 8. Создать иерархию классов в Java, которые будут повторять диаграмму классов созданную в задаче 6 (Диаграмма классов)
+
+> Задание выполнено в ходе написания кода программы
+
+##### Задание 9. Программа-реестр домашних животных
+
+Написать программу на Java, которая будет имитировать реестр домашних животных.
+
 В программе должен быть реализован следующий функционал:
-14.1 Завести новое животное
-14.2 определять животное в правильный класс
-14.3 увидеть список команд, которое выполняет животное
-14.4 обучить животное новым командам
-14.5 Реализовать навигацию по меню
 
-Функционал приложения описан ниже
+***Добавление нового животного:*** Реализовать функциональность для добавления новых животных в реестр. Животное должно определяться в правильный класс (например, "собака", "кошка", "хомяк" и т.д.)
 
-> `Задание 15.` Создайте класс Счетчик, у которого есть метод add(), увеличивающий̆
-значение внутренней̆int переменной̆на 1 при нажатие “Завести новое
-животное” Сделайте так, чтобы с объектом такого типа можно было работать в
-блоке try-with-resources. Нужно бросить исключение, если работа с объектом
-типа счетчик была не в ресурсном try и/или ресурс остался открыт. Значение
-считать в ресурсе try, если при заведения животного заполнены все поля.
+***Список команд животного:*** Вывести список команд, которые может выполнять добавленное животное (например, "сидеть", "лежать").
 
-Нужно избегать падения приложения, а не бросать исключение на каждом шагу. Введение не корректных данных в программе
-обрабатывается без падения приложения (метод getNewAnimal в классе View), а именно повторной попыткой введения данных до тех пор, 
-пока они не будут введены корректно. Вместо этого реализовано пробрасывание исключение в случае работы не в ресурсе счетчика при 
-увеличении его значения (счетчик имплементирует интерфейс AutoCloseable, и при работе в ресурсоном трае падать не должен).
+***Обучение новым командам:*** Добавить возможность обучать животных новым командам.
 
-## Описание приложения:
+***Вывести список животных по дате рождения***
 
-При запуске происходит считывание информации из файла локальной базы данных, в которой хранится информация о животных
-в json - формате в коллекцию в виде списка. (Если это первый запуск приложения на компьютере - такой файл будет создан). 
-Далее работа будет происходить со списком. Пользователь, при желании, может сохранить данные. При этом происходит
-пересохранение всех данных из коллекции в локальный файл базы данных. В случае, если пользователь не сохранил данные 
-перед выходом из приложения - ему будет предложено сохранить их, после чего работа приложения завершится.
+***Навигация по меню:*** Реализовать консольный пользовательский интерфейс с меню для навигации между вышеуказанными функциями.
 
-`Функционал приложения`:
-* Добавить животное, выбрав при этом вид животного
-* Научить животное новой команде, выбрав его по индексу
-* Посмотреть список команд животного, выбрав его по индексу
-* Вывести реестр имеющихся животных
-* Удалить животное из реестра, выбрав его по индексу
-* Сохранить изменения (при этом, если изменений не было - выведется соответствующее сообщение)
-* Выйти. (если были изменения, будет предложено их сохранить)
+> Функционал приложения описан в файле [README.md](\HumanFriends\README.md) в папке с проектом.
+
+##### Задание 10. Счетчик животных
+
+Создать механизм, который позволяет вывести на экран общее количество созданных животных любого типа (Как домашних, так и вьючных), то есть при создании каждого нового животного счетчик увеличивается на “1”.
