@@ -3,6 +3,7 @@ package org.example;
 // AnimalTypeAdapter.java
 
 import com.google.gson.*;
+import org.example.Animal.*;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

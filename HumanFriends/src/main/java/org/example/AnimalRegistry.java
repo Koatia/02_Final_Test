@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
+import org.example.Animal.Animal;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -80,6 +81,6 @@ public class AnimalRegistry {
     }
 
     public void printTotalAnimalCount() {
-        System.out.println("Общее количество созданных животных: " + getAnimalCount());
+        System.out.println("Общее количество животных: " + getAnimalCount());
     }
 }

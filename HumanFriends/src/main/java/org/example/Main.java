@@ -2,6 +2,8 @@ package org.example;
 
 // Main.java
 
+import org.example.Animal.*;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
