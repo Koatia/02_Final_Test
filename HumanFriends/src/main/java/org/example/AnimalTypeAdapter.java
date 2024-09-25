@@ -26,7 +26,8 @@ public class AnimalTypeAdapter implements JsonSerializer<Animal>, JsonDeserializ
     }
 
     @Override
-    public Animal deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+    public Animal deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+            throws JsonParseException {
         JsonObject jsonObject = json.getAsJsonObject();
 
         JsonElement typeElement = jsonObject.get("type");
