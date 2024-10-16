@@ -1,0 +1,50 @@
+[
+  {
+    "type": "Dog",
+    "name": "Fido",
+    "birthDay": 1577826000000,
+    "commands": [
+      "Sit",
+      "Stay",
+      "Fetch"
+    ]
+  },
+  {
+    "type": "Cat",
+    "name": "Whiskers",
+    "birthDay": 1557867600000,
+    "commands": [
+      "Sit",
+      "Pounce"
+    ]
+  },
+  {
+    "type": "Hamster",
+    "name": "Hammy",
+    "birthDay": 1615323600000,
+    "commands": [
+      "Roll",
+      "Hide"
+    ]
+  },
+  {
+    "type": "Dog",
+    "name": "Buddy",
+    "birthDay": 1544389200000,
+    "commands": [
+      "Sit",
+      "Paw",
+      "Bark"
+    ]
+  },
+  {
+    "type": "Cat",
+    "name": "Smudge",
+    "birthDay": 1582146000000,
+    "commands": [
+      "Sit",
+      "Pounce",
+      "Scratch"
+    ]
+  }
+]

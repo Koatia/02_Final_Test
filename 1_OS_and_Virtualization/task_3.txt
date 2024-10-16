@@ -1,0 +1,230 @@
+ki@ki:~/test$ wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.30-1_all.deb
+--2024-06-18 17:24:01--  https://dev.mysql.com/get/mysql-apt-config_0.8.30-1_all.deb
+Resolving dev.mysql.com (dev.mysql.com)... 88.221.98.102, 2a02:26f0:9500:98d::2e31, 2a02:26f0:9500:9a9::2e31
+Connecting to dev.mysql.com (dev.mysql.com)|88.221.98.102|:443... connected.
+HTTP request sent, awaiting response... 302 Moved Temporarily
+Location: https://repo.mysql.com//mysql-apt-config_0.8.30-1_all.deb [following]
+--2024-06-18 17:24:01--  https://repo.mysql.com//mysql-apt-config_0.8.30-1_all.deb
+Resolving repo.mysql.com (repo.mysql.com)... 23.46.121.197, 2a02:26f0:9500:10b6::1d68, 2a02:26f0:9500:10a6::1d68
+Connecting to repo.mysql.com (repo.mysql.com)|23.46.121.197|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18200 (18K) [application/x-debian-package]
+Saving to: ‘mysql-apt-config_0.8.30-1_all.deb’
+
+mysql-apt-config_0.8.30-1_ 100%[=====================================>]  17,77K  --.-KB/s    in 0s
+
+2024-06-18 17:24:02 (129 MB/s) - ‘mysql-apt-config_0.8.30-1_all.deb’ saved [18200/18200]
+
+ki@ki:~/test$ sudo dpkg -i mysql-apt-config_0.8.30-1_all.deb
+[sudo] password for ki:
+Выбор ранее не выбранного пакета mysql-apt-config.
+(Чтение базы данных … на данный момент установлено 83376 файлов и каталогов.)
+Подготовка к распаковке mysql-apt-config_0.8.30-1_all.deb …
+Распаковывается mysql-apt-config (0.8.30-1) …
+Настраивается пакет mysql-apt-config (0.8.30-1) …
+
+ki@ki:~/test$ sudo apt update
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+Пол:2 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Сущ:3 http://security.ubuntu.com/ubuntu noble-security InRelease
+Пол:4 http://repo.mysql.com/apt/ubuntu noble InRelease [22,6 kB]
+Сущ:5 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease
+Пол:6 http://repo.mysql.com/apt/ubuntu noble/mysql-8.4-lts amd64 Packages [16,8 kB]
+Пол:7 http://repo.mysql.com/apt/ubuntu noble/mysql-tools amd64 Packages [4 125 B]
+Получено 170 kB за 1с (146 kB/s)
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Все пакеты имеют последние версии.
+ki@ki:~/test$ sudo apt install mysql-server
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Будут установлены следующие дополнительные пакеты:
+  libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client
+  mysql-community-client-core mysql-community-client-plugins mysql-community-server
+  mysql-community-server-core
+Следующие НОВЫЕ пакеты будут установлены:
+  libmecab2 mecab-ipadic mecab-ipadic-utf8 mecab-utils mysql-client mysql-common mysql-community-client
+  mysql-community-client-core mysql-community-client-plugins mysql-community-server
+  mysql-community-server-core mysql-server
+Обновлено 0 пакетов, установлено 12 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.
+Необходимо скачать 36,5 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 262 MB.
+Хотите продолжить? [Д/н]
+Пол:1 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libmecab2 amd64 0.996-14ubuntu4 [201 kB]
+Пол:2 http://repo.mysql.com/apt/ubuntu noble/mysql-8.4-lts amd64 mysql-common amd64 8.4.0-1ubuntu24.04 [67,3 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 mecab-utils amd64 0.996-14ubuntu4 [4 804 B]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6 718 kB]
+Пол:5 http://repo.mysql.com/apt/ubuntu noble/mysql-8.4-lts amd64 mysql-community-client-plugins amd64 8.4.0-1ubuntu24.04 [1 467 kB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4 384 B]
+Пол:7 http://repo.mysql.com/apt/ubuntu noble/mysql-8.4-lts amd64 mysql-community-client-core amd64 8.4.0-1ubuntu24.04 [1 825 kB]
+Пол:8 http://repo.mysql.com/apt/ubuntu noble/mysql-8.4-lts amd64 mysql-community-client amd64 8.4.0-1ubuntu24.04 [2 109 kB]
+Пол:9 http://repo.mysql.com/apt/ubuntu noble/mysql-8.4-lts amd64 mysql-client amd64 8.4.0-1ubuntu24.04 [65,9 kB]
+Пол:10 http://repo.mysql.com/apt/ubuntu noble/mysql-8.4-lts amd64 mysql-community-server-core amd64 8.4.0-1ubuntu24.04 [23,9 MB]
+Пол:11 http://repo.mysql.com/apt/ubuntu noble/mysql-8.4-lts amd64 mysql-community-server amd64 8.4.0-1ubuntu24.04 [76,0 kB]
+Пол:12 http://repo.mysql.com/apt/ubuntu noble/mysql-8.4-lts amd64 mysql-server amd64 8.4.0-1ubuntu24.04 [65,9 kB]
+Получено 36,5 MB за 8с (4 517 kB/s)
+Предварительная настройка пакетов …
+Выбор ранее не выбранного пакета mysql-common.
+(Чтение базы данных … на данный момент установлен 83381 файл и каталог.)
+Подготовка к распаковке …/00-mysql-common_8.4.0-1ubuntu24.04_amd64.deb …
+Распаковывается mysql-common (8.4.0-1ubuntu24.04) …
+Выбор ранее не выбранного пакета mysql-community-client-plugins.
+Подготовка к распаковке …/01-mysql-community-client-plugins_8.4.0-1ubuntu24.04_amd64.deb …
+Распаковывается mysql-community-client-plugins (8.4.0-1ubuntu24.04) …
+Выбор ранее не выбранного пакета mysql-community-client-core.
+Подготовка к распаковке …/02-mysql-community-client-core_8.4.0-1ubuntu24.04_amd64.deb …
+Распаковывается mysql-community-client-core (8.4.0-1ubuntu24.04) …
+Выбор ранее не выбранного пакета mysql-community-client.
+Подготовка к распаковке …/03-mysql-community-client_8.4.0-1ubuntu24.04_amd64.deb …
+Распаковывается mysql-community-client (8.4.0-1ubuntu24.04) …
+Выбор ранее не выбранного пакета mysql-client.
+Подготовка к распаковке …/04-mysql-client_8.4.0-1ubuntu24.04_amd64.deb …
+Распаковывается mysql-client (8.4.0-1ubuntu24.04) …
+Выбор ранее не выбранного пакета libmecab2:amd64.
+Подготовка к распаковке …/05-libmecab2_0.996-14ubuntu4_amd64.deb …
+Распаковывается libmecab2:amd64 (0.996-14ubuntu4) …
+Выбор ранее не выбранного пакета mysql-community-server-core.
+Подготовка к распаковке …/06-mysql-community-server-core_8.4.0-1ubuntu24.04_amd64.deb …
+Распаковывается mysql-community-server-core (8.4.0-1ubuntu24.04) …
+Выбор ранее не выбранного пакета mysql-community-server.
+Подготовка к распаковке …/07-mysql-community-server_8.4.0-1ubuntu24.04_amd64.deb …
+Распаковывается mysql-community-server (8.4.0-1ubuntu24.04) …
+Выбор ранее не выбранного пакета mecab-utils.
+Подготовка к распаковке …/08-mecab-utils_0.996-14ubuntu4_amd64.deb …
+Распаковывается mecab-utils (0.996-14ubuntu4) …
+Выбор ранее не выбранного пакета mecab-ipadic.
+Подготовка к распаковке …/09-mecab-ipadic_2.7.0-20070801+main-3_all.deb …
+Распаковывается mecab-ipadic (2.7.0-20070801+main-3) …
+Выбор ранее не выбранного пакета mecab-ipadic-utf8.
+Подготовка к распаковке …/10-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb …
+Распаковывается mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+Выбор ранее не выбранного пакета mysql-server.
+Подготовка к распаковке …/11-mysql-server_8.4.0-1ubuntu24.04_amd64.deb …
+Распаковывается mysql-server (8.4.0-1ubuntu24.04) …
+Настраивается пакет libmecab2:amd64 (0.996-14ubuntu4) …
+Настраивается пакет mysql-common (8.4.0-1ubuntu24.04) …
+update-alternatives: используется /etc/mysql/my.cnf.fallback для предоставления /etc/mysql/my.cnf (my.cnf
+) в автоматическом режиме
+Настраивается пакет mysql-community-server-core (8.4.0-1ubuntu24.04) …
+Настраивается пакет mecab-utils (0.996-14ubuntu4) …
+Настраивается пакет mysql-community-client-plugins (8.4.0-1ubuntu24.04) …
+Настраивается пакет mecab-ipadic (2.7.0-20070801+main-3) …
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################|
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+emitting double-array: 100% |###########################################|
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################|
+
+done!
+update-alternatives: используется /var/lib/mecab/dic/ipadic для предоставления /var/lib/mecab/dic/debian
+(mecab-dictionary) в автоматическом режиме
+Настраивается пакет mysql-community-client-core (8.4.0-1ubuntu24.04) …
+Настраивается пакет mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################|
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+emitting double-array: 100% |###########################################|
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################|
+
+done!
+update-alternatives: используется /var/lib/mecab/dic/ipadic-utf8 для предоставления /var/lib/mecab/dic/de
+bian (mecab-dictionary) в автоматическом режиме
+Настраивается пакет mysql-community-client (8.4.0-1ubuntu24.04) …
+Настраивается пакет mysql-client (8.4.0-1ubuntu24.04) …
+Настраивается пакет mysql-community-server (8.4.0-1ubuntu24.04) …
+update-alternatives: используется /etc/mysql/mysql.cnf для предоставления /etc/mysql/my.cnf (my.cnf) в ав
+томатическом режиме
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /usr/lib/systemd/system/mysql
+.service.
+Настраивается пакет mysql-server (8.4.0-1ubuntu24.04) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+Обрабатываются триггеры для libc-bin (2.39-0ubuntu8.2) …
+Scanning processes...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+
+
+ki@ki:~/test$ systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/usr/lib/systemd/system/mysql.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2024-06-18 17:27:00 UTC; 12s ago
+       Docs: man:mysqld(8)
+             http://dev.mysql.com/doc/refman/en/using-systemd.html
+   Main PID: 2837 (mysqld)
+     Status: "Server is operational"
+      Tasks: 36 (limit: 4613)
+     Memory: 431.1M (peak: 444.4M)
+        CPU: 627ms
+     CGroup: /system.slice/mysql.service
+             └─2837 /usr/sbin/mysqld
+
+июн 18 17:27:00 ki systemd[1]: Starting mysql.service - MySQL Community Server...
+июн 18 17:27:00 ki systemd[1]: Started mysql.service - MySQL Community Server.
+
